@@ -26,3 +26,4 @@ Birth date : day: 10 month: 12 year: 2022
 # RESOURCES (In Polish)
 - https://romek.info/ut/pesel.html
 - https://www.gov.pl/web/gov/czym-jest-numer-pesel
+- https://youtu.be/4uj2t4cGqQU (got inspired by)
