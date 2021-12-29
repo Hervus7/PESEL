@@ -1,5 +1,3 @@
-# https://romek.info/ut/pesel.html
-# https://www.gov.pl/web/gov/czym-jest-numer-pesel
 import random
 import argparse
 
@@ -71,12 +69,12 @@ def show_info(pesel: str) -> None:
     print('Birth date : day: {} month: {} year: {}'.format(*birth_date(pesel)))
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Check if string is a valid PESEL or generate a valid PESEL with given parameters')
+    parser = argparse.ArgumentParser(description='Check if string is a valid PESEL or generate random valid PESEL with specified parameters')
     parser.add_argument('pesel', nargs='?', help='check if string is a valid PESEL')
     parser.add_argument('-d', '--day', help='day of birth', required=False, type=str)
     parser.add_argument('-m', '--month', help='month of birth', required=False, type=str)
     parser.add_argument('-y', '--year', help='year of birth', required=False, type=str)
-    parser.add_argument('-f', '--female', help='if gender has to be female', required=False, type=int, choices=[0, 1])
+    parser.add_argument('-f', '--female', help='if gender has to be female (leave unchanged for random)', required=False, type=int, choices=[0, 1])
     args = parser.parse_args()
 
     pesel = args.pesel if args.pesel else gen_pesel(args.day, args.month, args.year, args.female)
