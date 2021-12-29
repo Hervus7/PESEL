@@ -52,6 +52,7 @@ def gen_pesel(day=None, month=None, year=None, female=None) -> str:
     year = str(random.randint(1800, 2299)) if not year else str(year)
     month = random.randint(1, 12) if not month else int(month)
     max_day = 31 if month != 2 else 31-(2+int(not is_leap(int(year))))
+    if month in (4, 6, 9, 11) : max_day = 30
     day = str(random.randint(0, max_day)).zfill(2) if not day else str(day)
     cent_month = str(CENTURIES_REVERSED.get(int(year[0:2]))*20+month).zfill(2)
     gender = random.randint(0, 9999)
